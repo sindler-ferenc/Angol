@@ -25,144 +25,147 @@
             text-align: center;
         }
 
-
-
-
-        .grid-container {
+        .grid-container-type-0 {
             display: grid;
-            grid-template-columns: 0.5fr 1.5fr 1.2fr 0.9fr 0.9fr 1.7fr 0.4fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             grid-auto-columns: 1fr;
             grid-auto-rows: 1fr;
+            grid-template-columns: 0.5fr 1.5fr 1.2fr 0.9fr 0.9fr 0.5fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             gap: 0px 0px;
-            grid-auto-flow: row;
-            justify-items: stretch;
             grid-template-areas:
-                "name name name name verb name2 name2"
-                "question tobe i . verbs names questionmark"
-                "question tobe you . verbs names questionmark"
-                "question tobe we . verbs names questionmark"
-                "question tobe they . verbs names questionmark"
-                "question todoes he . verbs names questionmark"
-                "question todoes she . verbs names questionmark"
-                "question todoes it . verbs names questionmark"
-                "question todoes john . verbs names questionmark";
+                ". . name verb secondary_name ."
+                "question tobe i verbs names question_mark"
+                "question tobe you verbs names question_mark"
+                "question tobe we verbs names question_mark"
+                "question tobe they verbs names question_mark"
+                "question todoes he verbs names question_mark"
+                "question todoes she verbs names question_mark"
+                "question todoes it verbs names question_mark"
+                "question todoes john verbs names question_mark";
+            justify-items: stretch;
         }
 
-        .name {
-            grid-area: name;
-        }
-
-        .question {
+        .grid-container-type-0 .question {
             grid-area: question;
+            align-self: center;
+            justify-self: center;
         }
 
-        .tobe {
+        .grid-container-type-0 .tobe {
             grid-area: tobe;
         }
 
-        .todoes {
+        .grid-container-type-0 .todoes {
             grid-area: todoes;
         }
 
-        .i {
+        .grid-container-type-0 .i {
             grid-area: i;
         }
 
-        .you {
+        .grid-container-type-0 .you {
             grid-area: you;
         }
 
-        .we {
+        .grid-container-type-0 .we {
             grid-area: we;
         }
 
-        .they {
+        .grid-container-type-0 .they {
             grid-area: they;
         }
 
-        .he {
+        .grid-container-type-0 .he {
             grid-area: he;
         }
 
-        .she {
+        .grid-container-type-0 .she {
             grid-area: she;
         }
 
-        .it {
+        .grid-container-type-0 .it {
             grid-area: it;
         }
 
-        .john {
+        .grid-container-type-0 .john {
             grid-area: john;
         }
 
-        .verb {
-            grid-area: verb;
+        .grid-container-type-0 .name {
+            grid-area: name;
         }
 
-        .verbs {
+        .grid-container-type-0 .verbs {
             grid-area: verbs;
         }
 
-        .names {
+        .grid-container-type-0 .names {
             grid-area: names;
         }
 
-        .name2 {
-            grid-area: name2;
+        .grid-container-type-0 .verb {
+            grid-area: verb;
         }
 
-        .questionmark {
-            grid-area: questionmark;
+        .grid-container-type-0 .secondary_name {
+            grid-area: secondary_name;
         }
 
-        /* 
-        html,
-        body,
-        .grid-container {
-            height: 100%;
-            margin: 0;
+        .grid-container-type-0 .question_mark {
+            grid-area: question_mark;
+            align-self: center;
+            justify-self: center;
         }
 
-        .grid-container * {
-            border: 1px solid red;
-            position: relative;
+        .grid-container-type-0 p {
+            text-align: center;
         }
-
-        .grid-container *:after {
-            content: attr(class);
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: grid;
-            align-items: center;
-            justify-content: center;
-        } */
     </style>
 </head>
 
 <body>
     <div class="container mx-auto">
 
+
         <div class="py-8 px-8 bg-white rounded-xl shadow-lg mb-8">
             <h1 class="text-2xl mb-4">Present simple/ Egyszerű jelen idő</h1>
-            <div class="grid-container">
-                <div class="name"><p>Név</p></div>
-                <div class="question"><p class="rotate-90">Kérdés</p></div>
-                <div class="tobe"><p>Do</p></div>
-                <div class="todoes"><p>Does</p></div>
-                <div class="i"><p>I</p></div>
-                <div class="you"><p>You</p></div>
-                <div class="we"><p>We</p></div>
-                <div class="they"><p>They</p></div>
-                <div class="he"><p>He</p></div>
-                <div class="she">She</div>
-                <div class="it"><p>It</p></div>
-                <div class="john"><p>John Smith</p></div>
-                <div class="verb">Ige</div>
+            <div class="grid-container-type-0">
+                <div class="question">
+                    <p class="rotate-90">Kérdés</p>
+                </div>
+                <div class="tobe border-b-2 border-black">
+                    <p>Do</p>
+                </div>
+                <div class="todoes">
+                    <p>Does</p>
+                </div>
+                <div class="i bg-slate-400">
+                    <p>I</p>
+                </div>
+                <div class="you bg-slate-400">
+                    <p>You</p>
+                </div>
+                <div class="we bg-slate-400">
+                    <p>We</p>
+                </div>
+                <div class="they bg-slate-400 border-b-2 border-black">
+                    <p>They</p>
+                </div>
+                <div class="he bg-slate-400">
+                    <p>He</p>
+                </div>
+                <div class="she bg-slate-400">
+                    <p>She</p>
+                </div>
+                <div class="it bg-slate-400">
+                    <p>It</p>
+                </div>
+                <div class="john bg-slate-400">
+                    <p>John Smith</p>
+                </div>
+                <div class="name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
                 <div class="verbs">
                     <p>start</p>
                     <p>cook</p>
@@ -173,7 +176,7 @@
                     <p>have</p>
                     <p>learn</p>
                 </div>
-                <div class="names">
+                <div class="names bg-slate-400">
                     <p>a course</p>
                     <p>dinner</p>
                     <p>the letter</p>
@@ -183,161 +186,16 @@
                     <p>something</p>
                     <p>all books</p>
                 </div>
-                <div class="name2"><p>Név</p></div>
-                <div class="questionmark">?</div>
+                <div class="verb border-b-2 border-black">
+                    <p>Ige</p>
+                </div>
+                <div class="secondary_name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
+                <div class="question_mark">
+                    <p>?</p>
+                </div>
             </div>
-        </div>
-
-        <div class="py-8 px-8 bg-white rounded-xl shadow-lg mb-8">
-            <h1 class="text-2xl mb-4">Present simple/ Egyszerű jelen idő</h1>
-            <table class="english-table border-collapse border-spacing-2 border border-slate-500">
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th>Név</th>
-                    <th></th>
-                    <th>Ige</th>
-                    <th>Név</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td rowspan="9" class="rotate-90">Kérdés</td>
-                    <td rowspan="9">
-                        <div class="flex flex-col flex-initial">
-                            <p>Do</p>
-                            <p>Does</p>
-                        </div>
-                    </td>
-                    <td class="bg-slate-400">I</td>
-                    <td></td>
-                    <td>start</td>
-                    <td>a course</td>
-                    <td rowspan="9">?</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">you</td>
-                    <td></td>
-                    <td>cook</td>
-                    <td>dinner</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">he</td>
-                    <td></td>
-                    <td>write</td>
-                    <td>the letter</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">she</td>
-                    <td></td>
-                    <td>eat</td>
-                    <td>an apple</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">it</td>
-                    <td></td>
-                    <td>learn</td>
-                    <td>my lessons</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">Joe Smith</td>
-                    <td></td>
-                    <td>play</td>
-                    <td>your song</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">we</td>
-                    <td></td>
-                    <td>have</td>
-                    <td>something</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">you</td>
-                    <td></td>
-                    <td>read</td>
-                    <td>all books</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">they</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="py-8 px-8 bg-white rounded-xl shadow-lg mb-8">
-            <h1 class="text-2xl mb-4">Past simple/ Egyszerű múlt idő</h1>
-            <table class="english-table border-collapse border-spacing-2 border border-slate-500">
-                <tr>
-                    <th></th>
-                    <th></th>
-                    <th>Név</th>
-                    <th></th>
-                    <th>Ige</th>
-                    <th>Név</th>
-                    <th></th>
-                </tr>
-                <tr>
-                    <td rowspan="9" class="rotate-90">Kérdés</td>
-                    <td rowspan="9">
-                        <p>Did</p>
-                        <p>Didin't</p>
-                    </td>
-                    <td class="bg-slate-400">I</td>
-                    <td></td>
-                    <td>start</td>
-                    <td>a course</td>
-                    <td rowspan="9">?</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">you</td>
-                    <td></td>
-                    <td>cook</td>
-                    <td>dinner</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">he</td>
-                    <td></td>
-                    <td>write</td>
-                    <td>the letter</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">she</td>
-                    <td></td>
-                    <td>eat</td>
-                    <td>an apple</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">it</td>
-                    <td></td>
-                    <td>learn</td>
-                    <td>my lessons</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">Joe Smith</td>
-                    <td></td>
-                    <td>play</td>
-                    <td>your song</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">we</td>
-                    <td></td>
-                    <td>have</td>
-                    <td>something</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">you</td>
-                    <td></td>
-                    <td>read</td>
-                    <td>all books</td>
-                </tr>
-                <tr>
-                    <td class="bg-slate-400">they</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
         </div>
 
 
