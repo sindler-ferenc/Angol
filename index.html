@@ -8,32 +8,22 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Angol összefoglaló</title>
     <style>
-        .english-table tr th {
-            border-bottom: 1px solid rgb(100 116 139);
+        body {
+            background-color: #e5e5f7;
+            background-size: 8px 8px;
+            background-image: repeating-linear-gradient(45deg, #a9a9a9 0, #a9a9a9 0.8px, #e5e5f7 0, #e5e5f7 50%);
         }
 
-        .english-table tr td,
-        .english-table tr th {
-            padding-left: 2rem;
-            padding-right: 2rem;
-            padding-bottom: 0.375rem;
-            padding-top: 0.375rem;
-        }
-
-        .english-table tr td,
-        .english-table tr th {
-            text-align: center;
-        }
-
+        /* Grid container type 0 */
         .grid-container-type-0 {
             display: grid;
             grid-auto-columns: 1fr;
             grid-auto-rows: 1fr;
-            grid-template-columns: 0.5fr 1.5fr 1.2fr 0.9fr 0.9fr 0.5fr;
+            grid-template-columns: 0.5fr 1fr 1.2fr 0.9fr 0.9fr 0.5fr;
             grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
             gap: 0px 0px;
             grid-template-areas:
-                ". . name verb secondary_name ."
+                "null_1 null_1 name verb secondary_name null_2"
                 "question tobe i verbs names question_mark"
                 "question tobe you verbs names question_mark"
                 "question tobe we verbs names question_mark"
@@ -47,8 +37,6 @@
 
         .grid-container-type-0 .question {
             grid-area: question;
-            align-self: center;
-            justify-self: center;
         }
 
         .grid-container-type-0 .tobe {
@@ -113,11 +101,117 @@
 
         .grid-container-type-0 .question_mark {
             grid-area: question_mark;
-            align-self: center;
-            justify-self: center;
+        }
+
+        .null_1 {
+            grid-area: null_1;
+        }
+
+        .null_2 {
+            grid-area: null_2;
         }
 
         .grid-container-type-0 p {
+            text-align: center;
+        }
+
+        /* Grid container type 1 */
+        .grid-container-type-1 {
+            display: grid;
+            grid-auto-columns: 1fr;
+            grid-auto-rows: 1fr;
+            grid-template-columns: 0.5fr 1.5fr 1.2fr 0.9fr 0.9fr 1.7fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
+                "null_1 null_1 name verb secondary_name null_2"
+                "question confirmations i verbs_one names question_mark"
+                "question confirmations you verbs_one names question_mark"
+                "question confirmations we verbs_one names question_mark"
+                "question confirmations they verbs_one names question_mark"
+                "question confirmations he verbs_two names question_mark"
+                "question confirmations she verbs_two names question_mark"
+                "question confirmations it verbs_two names question_mark"
+                "question confirmations john verbs_two names question_mark";
+            justify-items: stretch;
+        }
+
+        .question {
+            grid-area: question;
+        }
+
+        .i {
+            grid-area: i;
+        }
+
+        .you {
+            grid-area: you;
+        }
+
+        .we {
+            grid-area: we;
+        }
+
+        .they {
+            grid-area: they;
+        }
+
+        .he {
+            grid-area: he;
+        }
+
+        .she {
+            grid-area: she;
+        }
+
+        .it {
+            grid-area: it;
+        }
+
+        .john {
+            grid-area: john;
+        }
+
+        .verbs_one {
+            grid-area: verbs_one;
+        }
+
+        .verbs_two {
+            grid-area: verbs_two;
+        }
+
+        .names {
+            grid-area: names;
+        }
+
+        .question_mark {
+            grid-area: question_mark;
+        }
+
+        .verb {
+            grid-area: verb;
+        }
+
+        .secondary_name {
+            grid-area: secondary_name;
+        }
+
+        .name {
+            grid-area: name;
+        }
+
+        .null_1 {
+            grid-area: null_1;
+        }
+
+        .null_2 {
+            grid-area: null_2;
+        }
+
+        .confirmations {
+            grid-area: confirmations;
+        }
+        .grid-container-type-1 p {
             text-align: center;
         }
     </style>
@@ -127,17 +221,18 @@
     <div class="container mx-auto">
 
 
-        <div class="py-8 px-8 bg-white rounded-xl shadow-lg mb-8">
+        <div class="py-8 px-8 bg-white rounded-xl shadow-lg mb-8  border-double border-black border-4">
             <h1 class="text-2xl mb-4">Present simple/ Egyszerű jelen idő</h1>
-            <div class="grid-container-type-0">
-                <div class="question">
+            <!-- Present simple kérdés -->
+            <div class="grid-container-type-0 mb-8">
+                <div class="question justify-self-center self-center">
                     <p class="rotate-90">Kérdés</p>
                 </div>
-                <div class="tobe border-b-2 border-black">
-                    <p>Do</p>
+                <div class="tobe border-b-2 border-black grid">
+                    <p class="justify-self-center self-center">Do</p>
                 </div>
-                <div class="todoes">
-                    <p>Does</p>
+                <div class="todoes grid">
+                    <p class="justify-self-center self-center">Does</p>
                 </div>
                 <div class="i bg-slate-400">
                     <p>I</p>
@@ -166,25 +261,29 @@
                 <div class="name border-b-2 border-black">
                     <p>Név</p>
                 </div>
-                <div class="verbs">
-                    <p>start</p>
-                    <p>cook</p>
-                    <p>write</p>
-                    <p>eat</p>
-                    <p>learn</p>
-                    <p>play</p>
-                    <p>have</p>
-                    <p>learn</p>
+                <div class="verbs grid">
+                    <div class="justify-self-center self-center">
+                        <p>start</p>
+                        <p>cook</p>
+                        <p>write</p>
+                        <p>eat</p>
+                        <p>learn</p>
+                        <p>play</p>
+                        <p>have</p>
+                        <p>learn</p>
+                    </div>
                 </div>
-                <div class="names bg-slate-400">
-                    <p>a course</p>
-                    <p>dinner</p>
-                    <p>the letter</p>
-                    <p>an apple</p>
-                    <p>my lesson</p>
-                    <p>your song</p>
-                    <p>something</p>
-                    <p>all books</p>
+                <div class="names bg-slate-400 grid">
+                    <div class="justify-self-center self-center">
+                        <p>a course</p>
+                        <p>dinner</p>
+                        <p>the letter</p>
+                        <p>an apple</p>
+                        <p>my lesson</p>
+                        <p>your song</p>
+                        <p>something</p>
+                        <p>all books</p>
+                    </div>
                 </div>
                 <div class="verb border-b-2 border-black">
                     <p>Ige</p>
@@ -192,8 +291,169 @@
                 <div class="secondary_name border-b-2 border-black">
                     <p>Név</p>
                 </div>
-                <div class="question_mark">
+                <div class="question_mark justify-self-center self-center">
                     <p>?</p>
+                </div>
+                <div class="null_1 border-b-2 border-black"></div>
+                <div class="null_2 border-b-2 border-black"></div>
+            </div>
+            <!-- Present simple tagadó kérdés -->
+            <div class="grid-container-type-0 mb-8">
+                <div class="question justify-self-center self-center">
+                    <p class="rotate-90">Tagadó kérdés</p>
+                </div>
+                <div class="tobe border-b-2 border-black grid">
+                    <p class="justify-self-center self-center">Don't</p>
+                </div>
+                <div class="todoes grid">
+                    <p class="justify-self-center self-center">Doesn't</p>
+                </div>
+                <div class="i bg-slate-400">
+                    <p>I</p>
+                </div>
+                <div class="you bg-slate-400">
+                    <p>You</p>
+                </div>
+                <div class="we bg-slate-400">
+                    <p>We</p>
+                </div>
+                <div class="they bg-slate-400 border-b-2 border-black">
+                    <p>They</p>
+                </div>
+                <div class="he bg-slate-400">
+                    <p>He</p>
+                </div>
+                <div class="she bg-slate-400">
+                    <p>She</p>
+                </div>
+                <div class="it bg-slate-400">
+                    <p>It</p>
+                </div>
+                <div class="john bg-slate-400">
+                    <p>John Smith</p>
+                </div>
+                <div class="name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
+                <div class="verbs grid">
+                    <div class="justify-self-center self-center">
+                        <p>start</p>
+                        <p>cook</p>
+                        <p>write</p>
+                        <p>eat</p>
+                        <p>learn</p>
+                        <p>play</p>
+                        <p>have</p>
+                        <p>learn</p>
+                    </div>
+                </div>
+                <div class="names bg-slate-400 grid">
+                    <div class="justify-self-center self-center">
+                        <p>a course</p>
+                        <p>dinner</p>
+                        <p>the letter</p>
+                        <p>an apple</p>
+                        <p>my lesson</p>
+                        <p>your song</p>
+                        <p>something</p>
+                        <p>all books</p>
+                    </div>
+                </div>
+                <div class="verb border-b-2 border-black">
+                    <p>Ige</p>
+                </div>
+                <div class="secondary_name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
+                <div class="question_mark justify-self-center self-center">
+                    <p>?</p>
+                </div>
+                <div class="null_1 border-b-2 border-black"></div>
+                <div class="null_2 border-b-2 border-black"></div>
+            </div>
+            <!-- Present simple kijelentés -->
+            <div class="grid-container-type-1">
+                <div class="question justify-self-center self-center">
+                    <p class="rotate-90">Kijelentés</p>
+                </div>
+                <div class="i bg-slate-400">
+                    <p>I</p>
+                </div>
+                <div class="you bg-slate-400">
+                    <p>You</p>
+                </div>
+                <div class="we bg-slate-400">
+                    <p>We</p>
+                </div>
+                <div class="they bg-slate-400 border-b-2 border-black">
+                    <p>They</p>
+                </div>
+                <div class="he bg-slate-400">
+                    <p>He</p>
+                </div>
+                <div class="she bg-slate-400">
+                    <p>She</p>
+                </div>
+                <div class="it bg-slate-400">
+                    <p>It</p>
+                </div>
+                <div class="john bg-slate-400">
+                    <p>John Smith</p>
+                </div>
+
+                <div class="verbs_one grid border-b-2 border-black">
+                    <div class="justify-self-center self-center">
+                        <p>start</p>
+                        <p>cook</p>
+                        <p>write</p>
+                        <p>eat</p>
+                    </div>
+                </div>
+                <div class="verbs_two grid">
+                    <div class="justify-self-center self-center">
+                        <p>learns</p>
+                        <p>plays</p>
+                        <p>has</p>
+                        <p>reads</p>
+                    </div>
+                </div>
+                <div class="names bg-slate-400 grid">
+                    <div class="justify-self-center self-center">
+                        <p>a course</p>
+                        <p>dinner</p>
+                        <p>the letter</p>
+                        <p>an apple</p>
+                        <p>my lesson</p>
+                        <p>your song</p>
+                        <p>something</p>
+                        <p>all books</p>
+                    </div>
+                </div>
+                <div class="question_mark justify-self-center self-center">
+                    <p>?</p>
+                </div>
+                <div class="verb border-b-2 border-black">
+                    <p>Ige</p>
+                </div>
+                <div class="secondary_name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
+                <div class="name border-b-2 border-black">
+                    <p>Név</p>
+                </div>
+                <div class="null_1 border-b-2 border-black"></div>
+                <div class="null_2 border-b-2 border-black"></div>
+                <div class="confirmations grid">
+                    <div class="justify-self-center self-center">
+                        <p>Yes,</p>
+                        <p>Definitely,</p>
+                        <p>Of course,</p>
+                        <p>Naturally,</p>
+                        <p>Well,</p>
+                        <p>Actually,</p>
+                        <p>I think,</p>
+                        <p>In my opinion,</p>                   
+                    </div>
                 </div>
             </div>
         </div>
